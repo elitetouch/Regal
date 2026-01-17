@@ -67,20 +67,24 @@ function Footer() {
               }}
             >
               <IconButton
+                aria-label=""
                 icon={<Image alt="" src={RegalIcons.fb} />}
                 backgroundColor={"transparent"}
               />
               <IconButton
+                aria-label=""
                 icon={<Image alt="" src={RegalIcons.insta} />}
                 backgroundColor={"transparent"}
                 marginLeft={5}
               />
               <IconButton
+                aria-label=""
                 icon={<Image alt="" src={RegalIcons.twit} />}
                 backgroundColor={"transparent"}
                 marginLeft={5}
               />
               <IconButton
+                aria-label=""
                 icon={<Image alt="" src={RegalIcons.mail} />}
                 backgroundColor={"transparent"}
                 marginLeft={5}
@@ -156,7 +160,7 @@ function Footer() {
                   onClick={() =>
                     window.open(
                       "https://www.facebook.com/regalinheirs",
-                      "_blank"
+                      "_blank",
                     )
                   }
                   aria-label=""
@@ -168,7 +172,7 @@ function Footer() {
                   onClick={() =>
                     window.open(
                       "https://www.instagram.com/regalinheirs",
-                      "_blank"
+                      "_blank",
                     )
                   }
                   aria-label=""
