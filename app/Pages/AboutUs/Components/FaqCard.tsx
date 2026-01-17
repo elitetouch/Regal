@@ -27,6 +27,7 @@ function FaqCard({ question, answer }: faqTypes) {
           </div>
           <div>
             <IconButton
+              aria-label=""
               icon={
                 !openFaq ? (
                   <Image src={RegalIcons.faqClose} alt="" />

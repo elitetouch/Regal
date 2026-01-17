@@ -26,7 +26,7 @@ const RefittedData = [
     newOutfit: Images.NewOutfitThree,
   },
 ];
-function Refitted({ getInTouchRouting }: { getInTouchRouting: boolean }) {
+function Refitted({ getInTouchRouting }: { getInTouchRouting?: boolean }) {
   const router = useRouter();
   return (
     <div>
