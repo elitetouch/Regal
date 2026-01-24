@@ -4,6 +4,7 @@ import ProjectWrap from "./Components/ProjectWrap/ProjectWrap";
 import "./globals.css";
 import { Suspense } from "react";
 import Loading from "./loading";
+
 const prompt = Prompt({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
