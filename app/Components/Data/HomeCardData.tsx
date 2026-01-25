@@ -1,28 +1,28 @@
 import { Images } from "@/public/Images/images";
 export const HomeCardData = [
   {
-    clotheName: "Regular Fit Long Sleeve Top",
-    price: "N90,000",
-    rating: "5.0",
-    clotheImage: Images.itemOne,
-  },
-  {
-    clotheName: "Ankara pattern Tailored Jacket",
+    clotheName: "Ezenwanyi set",
     price: "N80,000",
+    rating: "5.0",
+    clotheImage: Images.itemsSix,
+  },
+  {
+    clotheName: "Waziri Jacket - long",
+    price: "N90,000",
     rating: "4.9",
-    clotheImage: Images.itemTwo,
+    clotheImage: Images.itemsTwo,
   },
   {
-    clotheName: "Textured Sunset Denim trouser",
-    price: "N75,000",
+    clotheName: "Waziri Jacket - short",
+    price: "N80,000",
     rating: "5.0",
-    clotheImage: Images.itemThree,
+    clotheImage: Images.itemsThree,
   },
   {
-    clotheName: "Regular Fit Long Sleeve Top",
-    price: "N75,000",
+    clotheName: "OBA kaftan",
+    price: "N80,000",
     rating: "5.0",
-    clotheImage: Images.itemFour,
+    clotheImage: Images.itemsFour,
   },
 ];
 export const HomeCardTwoData = [

@@ -16,7 +16,7 @@ function PressHero() {
       >
         <div className=" w-9/12 m-auto">
           <div className={`${robotoSlab.className}`}>
-            <Text className=" text-center text-white font-regular leading-12 text-4xl lg:text-6xl lg:leading-16">
+            <Text className=" text-center text-white font-regular leading-11 text-4xl lg:text-6xl lg:leading-16">
               How to unlock creativity & make something useful?
             </Text>
           </div>

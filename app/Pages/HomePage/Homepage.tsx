@@ -106,13 +106,13 @@ export const HomeHero = () => {
       <div className=" lg:pt-[20px] pt-[10px]">
         <Navbar />
       </div>
-      <div className=" lg:w-11/12 m-auto grid lg:grid-cols-2 items-center mt-[10px] ">
+      <div className=" lg:w-11/12 m-auto grid lg:grid-cols-2 items-center pt-[10px] ">
         <div className=" lg:grid hidden">
           <HeroComponent />
         </div>
-        <div className=" w-11/12 m-auto ">
+        <div className=" w-11/12 m-auto pt-[50px] lg:pt-0 ">
           <div className={`${robotoSlab.className} text-[#BE1011]`}>
-            <Text className=" font-extrabold  lg:text-[40px] lg:pt-0 pt-[20px] text-center lg:text-left text-[25px]   ">
+            <Text className=" font-extrabold  lg:text-[40px] lg:pt-0 pt-[30px] text-center lg:text-left text-[25px]   ">
               REGAL IN HEIRS
             </Text>
             <Text className=" leading-10 pt-[15px]  text-center lg:text-left">
@@ -154,7 +154,7 @@ export const HomeHero = () => {
             </div>
           </div>
         </div>
-        <div className=" lg:hidden grid w-11/12 m-auto">
+        <div className=" lg:hidden grid w-11/12 m-auto pt-[40px]">
           <HeroComponent />
         </div>
       </div>

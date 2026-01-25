@@ -11,11 +11,11 @@ type HomeCardType = {
   cardHeader: string;
 };
 function HomeCard({ imagez, rating, prices, cardHeader }: HomeCardType) {
-  const phoneNumber = "2348012345678"; // ✅ replace with your number with country code
+  const phoneNumber = "+2348132345885"; // ✅ replace with your number with country code
   const message = `Hi, I'm interested in ${cardHeader}. Price: ${prices},.`;
 
   const waLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-    message
+    message,
   )}`;
 
   return (
@@ -38,11 +38,11 @@ function HomeCard({ imagez, rating, prices, cardHeader }: HomeCardType) {
           }}
           children={cardHeader}
         />
-        <div className=" grid grid-cols-2 mt-[5px] w-9/12 m-auto">
+        <div className=" grid grid-cols-2 mt-[5px] w-6/12 m-auto">
           <div className=" text-center border-r border">
             <Text className=" text-center text-[#5B2A2E]">{prices}</Text>
           </div>
-          <div className=" flex items-center gap-x-[5px] justify-center ">
+          <div className=" flex items-center gap-x-[10px] justify-center ">
             <Text className="  text-[#5B2A2E]">{rating}</Text>
             <Image src={RegalIcons.ratingStars} alt="" />
           </div>

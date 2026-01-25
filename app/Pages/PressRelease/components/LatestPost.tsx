@@ -101,7 +101,7 @@ function LatestPost() {
         </div>
         <div className=" grid justify-center mt-[100px]">
           <Button
-            marginLeft={10}
+            //marginLeft={10}
             bg=" transparent"
             border="2px solid #5B2A2E"
             h="50px"

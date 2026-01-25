@@ -11,6 +11,11 @@ import { RegalIcons } from "@/public/Icons/Icons";
 import Refitted from "./Refitted";
 import { Routes } from "@/app/Components/RouteFunctions";
 import { useRouter } from "next/navigation";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 export const RegalCollection = ({
   bestSelling,
   seeAll,
@@ -44,18 +49,86 @@ export const RegalCollection = ({
           }}
         />
       </div>
-      <div className=" grid lg:grid-cols-3 lg:pt-[40px] pt-[30px] w-10/12 lg:w-11/12 m-auto items-center justify-center gap-y-[40px] gap-x-[60px]">
-        {HomeCardData?.map((item, index) => (
-          <div key={index} className=" grid w-full justify-center ">
-            <HomeCard
-              imagez={item.clotheImage}
-              rating={item.rating}
-              prices={item.price}
-              cardHeader={item.clotheName}
-            />
+      {!seeAll && (
+        <div className=" lg:grid  lg:pt-[40px] pt-[30px] w-11/12 lg:w-11/12 m-auto ">
+          <div className="relative w-full lg:grid hidden">
+            <Swiper
+              modules={[Navigation, Pagination, Autoplay]}
+              spaceBetween={40}
+              slidesPerView={3}
+              // centeredSlides
+              loop
+              initialSlide={1}
+              autoplay={{ delay: 3000 }}
+              pagination={{ clickable: true }}
+              navigation={{
+                prevEl: ".swiper-prev",
+                nextEl: ".swiper-next",
+              }}
+              className="w-full"
+            >
+              {HomeCardData?.map((item, index) => (
+                <SwiperSlide key={index} className="group pb-[70px]">
+                  <div key={index} className=" grid w-full justify-center ">
+                    <HomeCard
+                      imagez={item.clotheImage}
+                      rating={item.rating}
+                      prices={item.price}
+                      cardHeader={item.clotheName}
+                    />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
-        ))}
-      </div>
+          <div className="relative w-full lg:hidden grid">
+            <Swiper
+              modules={[Navigation, Pagination, Autoplay]}
+              spaceBetween={40}
+              slidesPerView={1}
+              // centeredSlides
+              loop
+              initialSlide={1}
+              autoplay={{ delay: 3000 }}
+              pagination={{ clickable: true }}
+              navigation={{
+                prevEl: ".swiper-prev",
+                nextEl: ".swiper-next",
+              }}
+              className="w-full"
+            >
+              {HomeCardData?.map((item, index) => (
+                <SwiperSlide key={index} className="group pb-[70px]">
+                  <div key={index} className=" grid w-full justify-center ">
+                    <HomeCard
+                      imagez={item.clotheImage}
+                      rating={item.rating}
+                      prices={item.price}
+                      cardHeader={item.clotheName}
+                    />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        </div>
+      )}
+      {seeAll && (
+        <div className=" grid lg:grid-cols-3 grid-cols-1 gap-y-[20px] gap-x-[50px]  lg:pt-[40px] pt-[30px] w-10/12 lg:w-11/12 m-auto ">
+          {HomeCardData?.map((item, index) => (
+            <div key={index} className="group pb-[30px]">
+              <div key={index} className=" grid w-full justify-center ">
+                <HomeCard
+                  imagez={item.clotheImage}
+                  rating={item.rating}
+                  prices={item.price}
+                  cardHeader={item.clotheName}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
       {!seeAll && (
         <div className=" grid justify-center mt-[50px]">
           <Button

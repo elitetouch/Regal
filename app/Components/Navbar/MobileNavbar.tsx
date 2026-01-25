@@ -4,12 +4,19 @@ import Image from "next/image";
 import { Button, IconButton, Text } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import { Routes } from "../RouteFunctions";
-
+import bodyBg from "../../../public/secondSectionBg.svg";
 function MobileNavbar({ onOpen }: { onOpen: () => void }) {
   const router = useRouter();
   return (
-    <div>
-      <div className=" w-11/12 m-auto  pt-[2px] pb-[2px] flex justify-between items-center">
+    <div
+      style={{
+        backgroundImage: `url(${bodyBg.src})`, // Note: Use .src for Next.js Image imports
+        backgroundColor: "#FFFAF696",
+        zIndex: 10,
+      }}
+      className=" bg-cover bg-center bg-no-repeat fixed left-0  top-0 bg-white right-0"
+    >
+      <div className=" w-11/12 m-auto  pt-[10px] pb-[10px] flex justify-between items-center">
         <div className="">
           <div>
             <IconButton

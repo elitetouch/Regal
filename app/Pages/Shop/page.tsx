@@ -6,7 +6,7 @@ import secondSectionBg from "../../../public/secondSectionBg.svg";
 import RegalHairsShop from "./component/RegalHairsShop";
 function Page() {
   return (
-    <div>
+    <>
       <div
         className="   bg-cover bg-center bg-no-repeat pb-[50px]"
         style={{
@@ -18,7 +18,7 @@ function Page() {
         <div>
           <Navbar />
         </div>
-        <div className=" lg:mt-[60px] mt-[10px]">
+        <div className=" lg:pt-[60px] pt-[10px]">
           <Hero />
         </div>
         <div className=" lg:mt-[60px] mt-[30px] w-11/12  m-auto">
@@ -28,7 +28,7 @@ function Page() {
       <div className=" mt-[60px]">
         <RegalHairsShop />
       </div>
-    </div>
+    </>
   );
 }
 

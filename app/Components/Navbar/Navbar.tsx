@@ -8,7 +8,7 @@ import MobileNavbar from "./MobileNavbar";
 import { useState } from "react";
 import { useDisclosure } from "@chakra-ui/react";
 import MobileSideNav from "./MobileSideNav/MobileSideNav";
-
+import bodyBg from "../../../public/secondSectionBg.svg";
 export const NavbarComponent = () => {
   const router = useRouter();
   return (
@@ -63,61 +63,72 @@ function Navbar() {
     //  toogleMobile()
   };
   return (
-    <div>
+    <div className="">
       <div className=" lg:block hidden">
-        <div className=" w-11/12 m-auto lg:pt-[10px] lg:pb-[10px] pt-[60px] pb-[60px] grid grid-cols-3 justify-between items-center">
-          <div className="">
-            <div>
-              <IconButton
-                icon={
-                  <Image
-                    src={RegalIcons.redSeach}
-                    alt=""
-                    width={30}
-                    height={30}
-                  />
-                }
-                backgroundColor={"transparent"}
-                aria-label=""
-              />
+        <div
+          style={{
+            backgroundImage: `url(${bodyBg.src})`, // Note: Use .src for Next.js Image imports
+            backgroundColor: "#FFFAF696",
+            zIndex: 10,
+          }}
+          className=" bg-cover bg-center lg:pt-[20px] pt-[10px] bg-no-repeat top-0 fixed left-0 bg-white right-0"
+        >
+          <div className="  w-11/12 m-auto lg:pt-[10px] lg:pb-[10px] pt-[60px] pb-[60px] grid grid-cols-3 justify-between items-center">
+            <div className="">
+              <div>
+                <IconButton
+                  icon={
+                    <Image
+                      src={RegalIcons.redSeach}
+                      alt=""
+                      width={30}
+                      height={30}
+                    />
+                  }
+                  backgroundColor={"transparent"}
+                  aria-label=""
+                />
+              </div>
             </div>
-          </div>
-          <div className=" grid w-full justify-center">
-            <Image src={RegalIcons.regalLogo} alt="" />
-          </div>
-          <div className=" flex items-center gap-x-[60px] justify-end">
-            <div>
-              <IconButton
-                icon={
-                  <Image
-                    src={RegalIcons.redCart}
-                    alt=""
-                    //  width={30} height={30}
-                  />
-                }
-                onClick={() => router.push(Routes.Shop)}
-                backgroundColor={"transparent"}
-                aria-label=""
-              />
+            <div className=" grid w-full justify-center">
+              <Image src={RegalIcons.regalLogo} alt="" />
             </div>
-            <div>
-              <IconButton
-                onClick={() => router.push(Routes.GetInTouch)}
-                icon={
-                  <Image
-                    src={RegalIcons.redProfile}
-                    alt=""
-                    // width={30}
-                    // height={30}
-                  />
-                }
-                backgroundColor={"transparent"}
-                aria-label=""
-              />
+            <div className=" flex items-center gap-x-[60px] justify-end">
+              <div>
+                <IconButton
+                  icon={
+                    <Image
+                      src={RegalIcons.redCart}
+                      alt=""
+                      //  width={30} height={30}
+                    />
+                  }
+                  onClick={() => router.push(Routes.Shop)}
+                  backgroundColor={"transparent"}
+                  aria-label=""
+                />
+              </div>
+              <div>
+                <IconButton
+                  onClick={() => router.push(Routes.GetInTouch)}
+                  icon={
+                    <Image
+                      src={RegalIcons.redProfile}
+                      alt=""
+                      // width={30}
+                      // height={30}
+                    />
+                  }
+                  backgroundColor={"transparent"}
+                  aria-label=""
+                />
+              </div>
             </div>
           </div>
         </div>
-        <NavbarComponent />
+        <div className=" pt-[100px]">
+          <NavbarComponent />
+        </div>
       </div>
       <div className=" lg:hidden">
         <MobileNavbar onOpen={onOpen} />

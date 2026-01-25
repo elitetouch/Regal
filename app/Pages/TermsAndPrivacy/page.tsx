@@ -90,7 +90,7 @@ function Page() {
       <div>
         <Navbar />
       </div>
-      <div className=" w-10/12 m-auto">
+      <div className=" w-10/12 m-auto  pt-[40px] lg:pt-0">
         <div className={`${robotoSlab.className} mt-[30px]`}>
           <Text className=" text-xl font-bold">POLICIES</Text>
         </div>

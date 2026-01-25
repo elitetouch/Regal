@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import HomepageHeader from "@/app/Components/Headers/HomepageHeader";
 import SubHeader from "@/app/Components/Texts/SubHeader";
@@ -7,6 +8,8 @@ import { Text } from "@chakra-ui/react";
 import { RegalIcons } from "@/public/Icons/Icons";
 import Image from "next/image";
 import { Button } from "@chakra-ui/react";
+import { useRouter } from "next/navigation";
+import { Routes } from "@/app/Components/RouteFunctions";
 const faqData = [
   {
     question: "Are your clothes sustainable and ethically produced?",
@@ -33,6 +36,7 @@ const faqData = [
 ];
 
 function FAQs() {
+  const router = useRouter();
   return (
     <div>
       <div
@@ -88,6 +92,7 @@ function FAQs() {
                   border="2px solid ##5B2A2E"
                   h="50px"
                   w="190px"
+                  onClick={() => router.push(Routes.GetInTouch)}
                 >
                   <div className=" flex items-center gap-x-[20px]">
                     <Text className=" text-[16px]" color="white">

@@ -14,7 +14,7 @@ function Page() {
       }}
     >
       <Navbar />
-      <div className=" lg:mt-[40px] mt-[20px]">
+      <div className=" lg:mt-[40px] mt-[20px] lg:pt-0 pt-[50px]">
         <Refitted getInTouchRouting />
       </div>
       <div className=" mt-[80px]">

@@ -49,6 +49,12 @@ import itemOne from "../itemOne.png";
 import itemTwo from "../itemTwo.png";
 import itemThree from "../itemThree.png";
 import itemFour from "../itemFour.png";
+import itemsOne from "../waziriOne.png";
+import itemsTwo from "../waziriTwo.png";
+import itemsThree from "../waziriThree.png";
+import itemsFour from "../waziriFour.png";
+import itemsFive from "../waziriFive.png";
+import itemsSix from "../waziriSix.png";
 export const Images = {
   regular: regular,
   ankara: ankara,
@@ -101,4 +107,10 @@ export const Images = {
   itemTwo: itemTwo,
   itemThree: itemThree,
   itemFour: itemFour,
+  itemsOne: itemsOne,
+  itemsTwo: itemsTwo,
+  itemsThree: itemsThree,
+  itemsFour: itemsFour,
+  itemsFive: itemsFive,
+  itemsSix: itemsSix,
 };

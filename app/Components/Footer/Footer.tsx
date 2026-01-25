@@ -70,24 +70,39 @@ function Footer() {
                 aria-label=""
                 icon={<Image alt="" src={RegalIcons.fb} />}
                 backgroundColor={"transparent"}
+                onClick={() =>
+                  window.open("https://www.facebook.com/regalinheirs", "_blank")
+                }
               />
               <IconButton
                 aria-label=""
                 icon={<Image alt="" src={RegalIcons.insta} />}
                 backgroundColor={"transparent"}
                 marginLeft={5}
+                onClick={() =>
+                  window.open(
+                    "https://www.instagram.com/regalinheirs",
+                    "_blank",
+                  )
+                }
               />
               <IconButton
                 aria-label=""
                 icon={<Image alt="" src={RegalIcons.twit} />}
                 backgroundColor={"transparent"}
                 marginLeft={5}
+                onClick={() =>
+                  window.open("https://twitter.com/regalinheirs", "_blank")
+                }
               />
               <IconButton
                 aria-label=""
                 icon={<Image alt="" src={RegalIcons.mail} />}
                 backgroundColor={"transparent"}
                 marginLeft={5}
+                onClick={() =>
+                  window.open("https://mail.com/regalinheirs", "_blank")
+                }
               />
             </div>
           </div>

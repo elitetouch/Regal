@@ -7,12 +7,12 @@ import { RegalIcons } from "@/public/Icons/Icons";
 import { Button } from "@chakra-ui/react";
 import { Text } from "@chakra-ui/react";
 const regalShopImages = [
-  Images.regalOne,
-  Images.regalTwo,
-  Images.regalThree,
-  Images.regalFour,
-  Images.regalFive,
-  Images.regalSix,
+  Images.itemOne,
+  Images.itemTwo,
+  Images.itemThree,
+  Images.itemFour,
+  // Images.itemFive,
+  // Images.itemSix,
 ];
 function RegalHairsShop() {
   return (
@@ -37,7 +37,7 @@ function RegalHairsShop() {
           }}
         />
       </div>
-      <div className=" grid lg:grid-cols-2 w-10/12 m-auto lg:mt-[40px] mt-[30px] gap-y-[40px] gap-x-[20px] items-center">
+      <div className=" grid lg:grid-cols-2 w-10/12 m-auto lg:mt-[40px] mt-[30px] gap-y-[100px] gap-x-[40px] ">
         {regalShopImages?.map((item: any, index: number) => (
           <div key={index} className=" grid justify-center">
             <Image alt="" src={item} />

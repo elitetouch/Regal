@@ -97,7 +97,7 @@ function Refitted({ getInTouchRouting }: { getInTouchRouting?: boolean }) {
         ))}
       </div>
       <div>
-        <div className=" grid lg:grid-cols-3 gap-x-[20px] gap-y-[20px] pt-[140px] w-10/12 lg:w-11/12 m-auto">
+        <div className=" grid lg:grid-cols-3 gap-x-[20px] gap-y-[40px] pt-[140px] w-10/12 lg:w-11/12 m-auto">
           {HomeCardTwoData?.map((item, index) => (
             <div key={index} className=" grid justify-center">
               <HomeCardTwo
