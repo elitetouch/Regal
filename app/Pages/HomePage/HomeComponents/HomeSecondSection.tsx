@@ -16,6 +16,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { getProductApi } from "@/app/Components/Api/GetApi";
+import Loading from "@/app/loading";
 export const RegalCollection = ({
   bestSelling,
   seeAll,
@@ -24,6 +26,9 @@ export const RegalCollection = ({
   seeAll?: boolean;
 }) => {
   const router = useRouter();
+  const { data, isPending, error } = getProductApi();
+  console.log({ productData: data?.data?.data });
+  const browseProducts: any = data?.data?.data;
   return (
     <div className="">
       {/* <Text>Heeeyyyyyy</Text> */}
@@ -49,102 +54,112 @@ export const RegalCollection = ({
           }}
         />
       </div>
-      {!seeAll && (
-        <div className=" lg:grid  lg:pt-[40px] pt-[30px] w-11/12 lg:w-11/12 m-auto ">
-          <div className="relative w-full lg:grid hidden">
-            <Swiper
-              modules={[Navigation, Pagination, Autoplay]}
-              spaceBetween={40}
-              slidesPerView={3}
-              // centeredSlides
-              loop
-              initialSlide={1}
-              autoplay={{ delay: 3000 }}
-              pagination={{ clickable: true }}
-              navigation={{
-                prevEl: ".swiper-prev",
-                nextEl: ".swiper-next",
-              }}
-              className="w-full"
-            >
-              {HomeCardData?.map((item, index) => (
-                <SwiperSlide key={index} className="group pb-[70px]">
-                  <div key={index} className=" grid w-full justify-center ">
-                    <HomeCard
-                      imagez={item.clotheImage}
-                      rating={item.rating}
-                      prices={item.price}
-                      cardHeader={item.clotheName}
-                    />
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-          <div className="relative w-full lg:hidden grid">
-            <Swiper
-              modules={[Navigation, Pagination, Autoplay]}
-              spaceBetween={40}
-              slidesPerView={1}
-              // centeredSlides
-              loop
-              initialSlide={1}
-              autoplay={{ delay: 3000 }}
-              pagination={{ clickable: true }}
-              navigation={{
-                prevEl: ".swiper-prev",
-                nextEl: ".swiper-next",
-              }}
-              className="w-full"
-            >
-              {HomeCardData?.map((item, index) => (
-                <SwiperSlide key={index} className="group pb-[70px]">
-                  <div key={index} className=" grid w-full justify-center ">
-                    <HomeCard
-                      imagez={item.clotheImage}
-                      rating={item.rating}
-                      prices={item.price}
-                      cardHeader={item.clotheName}
-                    />
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
+      {isPending ? (
+        <div className=" w-full grid justify-center pt-[20px] pb-[20px]">
+          <div className="grid items-center justify-center w-full ">
+            <div className="loader"></div>
           </div>
         </div>
-      )}
-      {seeAll && (
-        <div className=" grid lg:grid-cols-3 grid-cols-1 gap-y-[20px] gap-x-[50px]  lg:pt-[40px] pt-[30px] w-10/12 lg:w-11/12 m-auto ">
-          {HomeCardData?.map((item, index) => (
-            <div key={index} className="group pb-[30px]">
-              <div key={index} className=" grid w-full justify-center ">
-                <HomeCard
-                  imagez={item.clotheImage}
-                  rating={item.rating}
-                  prices={item.price}
-                  cardHeader={item.clotheName}
-                />
+      ) : (
+        <div className="w-11/12 m-auto">
+          {!seeAll && (
+            <div className=" lg:grid  lg:pt-[40px] pt-[30px] w-11/12 lg:w-11/12 m-auto ">
+              <div className="relative w-full lg:grid hidden">
+                <Swiper
+                  modules={[Navigation, Pagination, Autoplay]}
+                  spaceBetween={40}
+                  slidesPerView={3}
+                  // centeredSlides
+                  loop
+                  initialSlide={1}
+                  autoplay={{ delay: 3000 }}
+                  pagination={{ clickable: true }}
+                  navigation={{
+                    prevEl: ".swiper-prev",
+                    nextEl: ".swiper-next",
+                  }}
+                  className="w-full"
+                >
+                  {browseProducts?.map((item: any, index: any) => (
+                    <SwiperSlide key={index} className="group pb-[70px]">
+                      <div key={index} className=" grid w-full ">
+                        <HomeCard
+                          imagez={item.image_url}
+                          rating={item.rating}
+                          prices={item.price}
+                          cardHeader={item.name}
+                        />
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
+              <div className="relative w-full lg:hidden grid">
+                <Swiper
+                  modules={[Navigation, Pagination, Autoplay]}
+                  spaceBetween={40}
+                  slidesPerView={1}
+                  // centeredSlides
+                  loop
+                  initialSlide={1}
+                  autoplay={{ delay: 3000 }}
+                  pagination={{ clickable: true }}
+                  navigation={{
+                    prevEl: ".swiper-prev",
+                    nextEl: ".swiper-next",
+                  }}
+                  className="w-full"
+                >
+                  {browseProducts?.map((item: any, index: any) => (
+                    <SwiperSlide key={index} className="group pb-[70px]">
+                      <div key={index} className=" grid w-full">
+                        <HomeCard
+                          imagez={item.image_url}
+                          rating={item.rating}
+                          prices={item.price}
+                          cardHeader={item.name}
+                        />
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
               </div>
             </div>
-          ))}
-        </div>
-      )}
-      {!seeAll && (
-        <div className=" grid justify-center mt-[50px]">
-          <Button
-            onClick={() => router.push(Routes.SeeAll)}
-            bg=" transparent"
-            border="2px solid #5B2A2E"
-            h="50px"
-            w="150px"
-          >
-            <div className=" flex items-center gap-x-[10px]">
-              <Text className=" text-[18px]" color="#5B2A2E">
-                See all
-              </Text>
-              <Image alt="" src={RegalIcons.rightArrow} />
+          )}
+          {seeAll && (
+            <div className=" grid lg:grid-cols-3 grid-cols-1 gap-y-[20px] gap-x-[50px]  lg:pt-[40px] pt-[30px] w-10/12 lg:w-11/12 m-auto ">
+              {browseProducts?.map((item: any, index: any) => (
+                <div key={index} className="group pb-[30px]">
+                  <div key={index} className=" grid w-full ">
+                    <HomeCard
+                      imagez={item.image_url}
+                      rating={item.rating}
+                      prices={item.price}
+                      cardHeader={item.name}
+                    />
+                  </div>
+                </div>
+              ))}
             </div>
-          </Button>
+          )}
+          {!seeAll && (
+            <div className=" grid justify-center mt-[50px]">
+              <Button
+                onClick={() => router.push(Routes.SeeAll)}
+                bg=" transparent"
+                border="2px solid #5B2A2E"
+                h="50px"
+                w="150px"
+              >
+                <div className=" flex items-center gap-x-[10px]">
+                  <Text className=" text-[18px]" color="#5B2A2E">
+                    See all
+                  </Text>
+                  <Image alt="" src={RegalIcons.rightArrow} />
+                </div>
+              </Button>
+            </div>
+          )}
         </div>
       )}
     </div>

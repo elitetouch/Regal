@@ -19,17 +19,25 @@ function HomeCard({ imagez, rating, prices, cardHeader }: HomeCardType) {
   )}`;
 
   return (
-    <div>
-      <div className=" relative">
-        <Image src={imagez} alt="" className=" lg:h-[106px]" />
-        <div className=" absolute bottom-0 w-full">
+    <div className=" flex-1 w-full">
+      <div className="relative w-full h-[500px] ">
+        <Image
+          src={imagez}
+          alt=""
+          fill
+          className="object-cover rounded-lg"
+          sizes="100vw"
+        />
+
+        <div className="absolute bottom-0 w-full">
           <a href={waLink} target="_blank" rel="noopener noreferrer">
-            <Button backgroundColor={"#BE1011"} height={65} width={"full"}>
-              <Text className=" text-white">Buy</Text>
+            <Button backgroundColor="#BE1011" height={65} width="full">
+              <Text className="text-white">Buy</Text>
             </Button>
           </a>
         </div>
       </div>
+
       <div>
         <CardHeaderText
           style={{
@@ -38,9 +46,9 @@ function HomeCard({ imagez, rating, prices, cardHeader }: HomeCardType) {
           }}
           children={cardHeader}
         />
-        <div className=" grid grid-cols-2 mt-[5px] w-6/12 m-auto">
+        <div className=" grid grid-cols-2 mt-[5px] w-8/12 m-auto">
           <div className=" text-center border-r border">
-            <Text className=" text-center text-[#5B2A2E]">{prices}</Text>
+            <Text className=" text-center text-[#5B2A2E]">N {prices}</Text>
           </div>
           <div className=" flex items-center gap-x-[10px] justify-center ">
             <Text className="  text-[#5B2A2E]">{rating}</Text>
