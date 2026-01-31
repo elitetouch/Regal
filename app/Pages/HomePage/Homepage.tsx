@@ -165,10 +165,10 @@ function Homepage() {
   const router = useRouter();
   return (
     <div className="">
+      <HomeHero />
       <a href="zendit://" target="_blank" rel="noopener noreferrer">
         Test Deep Link
       </a>
-      <HomeHero />
       <div>
         <HomeSecondSection />
       </div>
