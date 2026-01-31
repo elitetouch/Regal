@@ -166,9 +166,9 @@ function Homepage() {
   return (
     <div className="">
       <HomeHero />
-      <a href="zendit://" target="_blank" rel="noopener noreferrer">
+      {/* <a href="zendit://" target="_blank" rel="noopener noreferrer">
         Test Deep Link
-      </a>
+      </a> */}
       <div>
         <HomeSecondSection />
       </div>
