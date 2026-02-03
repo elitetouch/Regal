@@ -31,7 +31,7 @@ const HowItWorksData = [
   },
   {
     title: "Walk in to our studio",
-    body: "Bring in your item to our studio or dispatch them to us and well handle the rest ",
+    body: "Bring in your item to our studio or dispatch them to us and would handle the rest ",
     sectionImage: Images.WalkIn,
     eclipse: Images.greenEclipse,
   },

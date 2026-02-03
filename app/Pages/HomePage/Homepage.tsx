@@ -116,10 +116,9 @@ export const HomeHero = () => {
               REGAL IN HEIRS
             </Text>
             <Text className=" leading-10 pt-[15px]  text-center lg:text-left">
-              African fashion can be both majestic and sustainable and we’re
-              here to prove it. We redesign outdated clothing into fresh,
-              stylish creations that empower women to embrace beauty with
-              purpose.
+              African fashion can be both elegant and sustainable and we’re here
+              to prove it. We redesign outdated clothing into fresh, stylish
+              creations that empower women to embrace beauty with purpose.
             </Text>
           </div>
           <div className=" lg:mt-[30px] mt-[20px] grid lg:flex gap-x-[20px] gap-y-[40px] justify-center lg:justify-normal">
